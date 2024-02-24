@@ -11,7 +11,7 @@ export interface Props {
 
 export const ProductTitle = ({ title, className, style }: Props) => {
     // de esta forma obligoa que tenga que venir el título
-    const { product, } = useContext(ProductContext);
+    const { product } = useContext(ProductContext);
 
     return (
         <span
