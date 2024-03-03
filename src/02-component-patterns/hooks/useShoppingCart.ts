@@ -29,7 +29,6 @@ export const useShoppingCart = () => {
     return {
         shoppingCart,
         onProductCountChange
-
     }
 }
 
