@@ -1,7 +1,5 @@
 
 import { ProductButtons, ProductCard, ProductTitle, ProductImage } from "../components";
-
-import '../styles/custom-styles.css';
 import { products } from '../data/products';
 
 const product = products[0];
@@ -17,7 +15,6 @@ export const ShoppingPage = () => {
             <ProductCard
                 key={product.id}
                 product={product}
-                className="bg-dark text-white"
                 initialValues={{
                     count: 4,
                     maxCount: 10
@@ -27,18 +24,10 @@ export const ShoppingPage = () => {
                     ({ reset, increaseBy, maxCount, count, isMaxCountReached }) => (
 
                         <>
-                            <ProductImage className="custom-image" />
-                            <ProductTitle className='text-bold' />
-                            <ProductButtons className='custom-buttons' />
+                            <ProductImage />
+                            <ProductTitle />
+                            <ProductButtons />
 
-                            <button onClick={reset}>Reset</button>
-                            <button onClick={() => increaseBy(-2)}> -2 </button>
-                            {/* Sino se llega al isMaxCount mostrarlo, pero si se llega ocultar */}
-                            {
-                                (!isMaxCountReached) && <button onClick={() => increaseBy(+2)}> +2 </button>
-                            }
-
-                            <span>{count} - {maxCount}</span>
                         </>
 
                     )
